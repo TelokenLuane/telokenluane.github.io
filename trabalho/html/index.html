@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+      border: 4px solid #171617;
+      padding: 30px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin: 40px auto;
+      text-align: center;
+      background-color: white;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .menu button {
+      border: 4px outset rgb(252, 37, 134);
+      background-color: white;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .menu button:hover {
+      background-color: #ddcdcd;
+    }
+
+    .conteudo {
+      font-size: 16px;
+      color: #191818;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    h1, h2 {
+      color: #f02596;
+    }
+
+    ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bem-vindo ao Meu Portfólio</h1>
+    
+    <div class="menu">
+      <button onclick="trocarConteudo('sobre')">Sobre Mim</button>
+      <button onclick="trocarConteudo('formacao')">Formação</button>
+      <button onclick="trocarConteudo('portfolio')">Portfólio</button>
+      <button onclick="trocarConteudo('contato')">Contato</button>
+    </div>
+
+    <div class="conteudo" id="conteudo">
+      <!-- Conteúdo será carregado aqui -->
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Luane Teloken. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function trocarConteudo(secao) {
+      const conteudo = document.getElementById('conteudo');
+
+      const secoes = {
+        sobre: `
+          <h2>Sobre Mim</h2>
+          <p>Meu nome é Luane Teloken, tenho 28 anos, nasci em Marechal Cândido Rondon - PR e moro atualmente em São José dos Pinhais - PR. Trabalho como editora audiovisual em uma empresa especializada em serviços para imobiliárias. Sou estudante de Análise e Desenvolvimento de Sistemas e, apesar de já ter tido experiências com desenvolvimento de sites, é no curso que estou compreendendo profundamente todo o processo. Com a rotina corrida, nem sempre há tempo para os hobbies, mas quando posso, aproveito momentos ao ar livre, pratico exercícios e visito parques acompanhada de um bom chimarrão.</p>
+        `,
+        formacao: `
+          <h2>Formação Educacional e Idiomas</h2>
+          <ul>
+            <li>Cursando - Análise e Desenvolvimento de Sistemas</li>
+            <li>Concluído - Curso de Mídias Digitais (foco em tráfego pago)</li>
+            <li>Concluído - Curso de Administração de Empresas</li>
+            <li>Concluído - Curso de Espanhol, Intermediário</li>
+          </ul>
+        `,
+        portfolio: `
+            <section>
+            <h2>Portfólio</h2>
+            <p>Aqui estão alguns projetos que desenvolvi:</p>
+            <ul>
+                <li><a href="pdfs/banco_de_dados.pdf" target="_blank">Trabalho, Banco de Dados</a></li>
+                <li><a href="pdfs/caso_de_uso.pdf" target="_blank">Trabalho, Criação de caso de uso e criação de diagrama de classes</a></li>
+                <li><a href="pdfs/projeto_extensionista.pdf" target="_blank">Trabalho Extensionista - Aplicação Web para Monitoramente e Qualidade de Vida</a></li>
+            </ul>
+            </section>
+        `,
+        contato: `
+          <h2>Contato</h2>
+          <p>E-mail: <a href="mailto:luaneteloken@hotmail.com">luaneteloken@hotmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/luane-teloken-68845022a/" target="_blank">Meu LinkedIn</a></p>
+        `
+      };
+
+      conteudo.innerHTML = secoes[secao] || "<p>Seção não encontrada.</p>";
+    }
+
+    // Carregar seção "Sobre Mim" por padrão ao abrir
+    trocarConteudo('sobre');
+  </script>
+
+</body>
+</html>
