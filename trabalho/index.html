@@ -9,28 +9,30 @@
       font-family: Georgia, serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background-color: #f8f8f8; /* Cor de fundo suave */
     }
-
+   /* Container centralizado com largura máxima e sombra */
     .container {
       width: 90%;
       max-width: 700px;
       border: 4px solid #171617;
       padding: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);   /* Sombra para destaque */
       margin: 40px auto;
       text-align: center;
       background-color: white;
     }
-
+    
+  /* Menu de navegação com espaçamento entre os botões */
     .menu {
       display: flex;
       justify-content: center;
       gap: 10px;
       margin-bottom: 15px;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Permite quebra de linha em telas menores */
     }
 
+  /* Estilo dos botões do menu */
     .menu button {
       border: 4px outset rgb(252, 37, 134);
       background-color: white;
@@ -39,10 +41,12 @@
       font-weight: bold;
     }
 
+    /* Efeito de hover para indicar interatividade */
     .menu button:hover {
       background-color: #ddcdcd;
     }
 
+    /* Área de conteudo onde as seções serão exibidas */
     .conteudo {
       font-size: 16px;
       color: #191818;
@@ -51,12 +55,12 @@
     }
 
     h1, h2 {
-      color: #f02596;
+      color: #f02596; /* Cor padronizada para os titulos */
     }
 
     ul {
       padding-left: 20px;
-      text-align: left;
+      text-align: left; /* Lista alinhada à esquerda */
     }
 
     footer {
@@ -70,7 +74,8 @@
 
   <div class="container">
     <h1>Bem-vindo ao Meu Portfólio</h1>
-    
+
+    <!-- Menu com botões para trocar o conteudo exibido -->
     <div class="menu">
       <button onclick="trocarConteudo('sobre')">Sobre Mim</button>
       <button onclick="trocarConteudo('formacao')">Formação</button>
@@ -78,12 +83,14 @@
       <button onclick="trocarConteudo('contato')">Contato</button>
     </div>
 
+    <!-- Área onde o conteudo das seções será carregado dinamicamente -->
     <div class="conteudo" id="conteudo">
       <!-- Conteúdo será carregado aqui -->
     </div>
 
+    <!-- Rodapé com creditos -->
     <footer>
-      <p>&copy; 2025 Luane Teloken. Todos os direitos reservados.</p>
+      <p>Todos os direitos reservados. Luane Teloken, 2025 &copy;</p>
     </footer>
   </div>
 
